@@ -7,7 +7,6 @@ globalList = [
 
 def printAllList(listForPrinting):
     for item in listForPrinting:
-        # Extended to print all 4 fields
         str_out = f"Name = {item['name']}, Phone = {item['phone']}, Email = {item['email']}, Age = {item['age']}"
         print(str_out)
 
@@ -26,7 +25,6 @@ def addElemToSortedList(listForAdd, newElem):
     return
 
 def getElement():
-    # Extended input to gather all 4 fields
     name = input("Please enter the name: ")
     phone = input("Please enter the phone: ")
     email = input("Please enter the email: ")
@@ -42,12 +40,10 @@ def deleteElem(listForDel, name):
         return False
 
 def updeteElement(listForUpdate):
-    # Implemented from scratch: updates student info and keeps the list sorted
     nameForUpdate = input("Please enter the name of the student to update: ")
     indexForUpdate = findPosition(listForUpdate, nameForUpdate)
     
     if indexForUpdate < len(listForUpdate) and listForUpdate[indexForUpdate]["name"] == nameForUpdate:
-        # Remove the old element and insert updated one to maintain sorting order
         del listForUpdate[indexForUpdate]
         print("Please enter new details for the student:")
         newElem = getElement()
